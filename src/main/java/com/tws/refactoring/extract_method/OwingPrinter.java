@@ -9,10 +9,9 @@ public class OwingPrinter {
     private double outstanding = 0.0;
     void printOwing(String name, List<Order> orders) {
         Iterator<Order> elements = orders.iterator();
-//        double outstanding = 0.0;
 
         printBanner();
-        printOwings(elements,outstanding);
+        printOwings(elements);
         printDetails(name);
 
     }
@@ -23,7 +22,7 @@ public class OwingPrinter {
         System.out.println ("*****************************");
     }
 
-    public void printOwings(Iterator<Order> elements, double outstanding){
+    public void printOwings(Iterator<Order> elements){
         while (elements.hasNext()) {
             Order each = (Order) elements.next();
             this.outstanding += each.getAmount();
